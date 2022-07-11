@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Add session</h1>
+<div mat-dialog-content>
+  <form [formGroup]="sessionForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Session name</mat-label>
+      <input formControlName="sessionName" [formGroup]="sessionForm" matInput placeholder="Placeholder">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Trainer's name</mat-label>
+      <input formControlName="sessionTrainer" [formGroup]="sessionForm" matInput placeholder="Placeholder">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Session field</mat-label>
+      <mat-select formControlName="sessionField" [formGroup]="sessionForm" placeholder="">
+        <mat-option value="1">1</mat-option>
+        <mat-option value="2">2</mat-option>
+        <mat-option value="3">3</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Session's date</mat-label>
+      <input formControlName="sessiondate" [formGroup]="sessionForm" matInput [matDatepicker]="picker">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <div mat-dialog-action [align]="'end'">
+      <button mat-raised-button color="warn" mat-dialog-close="">close</button>
+      <button style="margin: 8px;" mat-raised-button color="primary" (click)="addSession()">{{actionBtn}}</button>
+    </div>
+  </form>
+</div>

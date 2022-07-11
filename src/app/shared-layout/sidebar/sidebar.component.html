@@ -1,0 +1,73 @@
+<mat-nav-list>
+    <div class="logo py-4">
+      <img src="/assets/photo1.jpg" alt="JEENISo Logo" />
+    </div>
+    <mat-divider></mat-divider>
+    <h1 matSubheader class="mt-2">Admin dashboard</h1>
+  
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/home">
+      Home 
+      <mat-icon>home</mat-icon>
+    </a>
+    
+    <div mat-list-item  clickOutside (clickOutside)="toggleMenuUsers()">     
+      <a  (click)="toggleMenuUsers()" mat-list-item >
+         accounts manager 
+         <mat-icon>keyboard_arrow_down</mat-icon>
+      </a>
+      <div *ngIf="isMenuUsers">
+        <ul>
+         <li>
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/accounts-manager" > 
+               Requests
+               <mat-icon >edit</mat-icon> 
+             </a>      
+         </li>
+         <li>
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/users-list">
+               Users list 
+               <mat-icon>edit</mat-icon>          
+             </a>
+             
+         </li>
+        </ul>
+      </div>
+      
+
+   </div>
+   <div mat-list-item  clickOutside (clickOutside)="clickedOutsideTraining()">     
+    <a  (click)="toggleMenuTraining()" mat-list-item >
+       training
+       <mat-icon>keyboard_arrow_down</mat-icon>
+    </a>
+    <div *ngIf="isMenuTraining">
+      <ul>
+       <li>
+          <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/training" > 
+             Sessions
+             <mat-icon >edit</mat-icon> 
+           </a>      
+       </li>
+       <li>
+          <a mat-list-item routerLinkActive="list-item-active" routerLink="##">
+             Trainers
+             <mat-icon>edit</mat-icon>          
+           </a>
+           
+       </li>
+      </ul>
+      
+
+    </div>
+    
+
+
+
+
+ </div>
+
+  </mat-nav-list>
+<!-- <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/training">
+        Training 
+        <mat-icon>edit</mat-icon>          
+      </a> -->

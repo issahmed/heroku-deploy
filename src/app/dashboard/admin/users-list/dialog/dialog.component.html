@@ -1,0 +1,56 @@
+<h1 mat-dialog-title>Edit user account</h1>
+<div mat-dialog-content >
+  <form [formGroup]="editUser" (ngSubmit)="userUpdate()">
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-2">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" [formGroup]="editUser" required>
+          <mat-icon matSuffix>face</mat-icon>        
+        </mat-form-field>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-2">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Lastname</mat-label>
+          <input matInput formControlName="lastName" [formGroup]="editUser" required>
+          <mat-icon matSuffix>face</mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" required [formGroup]="editUser">
+          <mat-icon matSuffix>mail</mat-icon>         
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-2">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Phone</mat-label>
+          <input matInput formControlName="phone" required [formGroup]="editUser">
+          <mat-icon matSuffix>phone</mat-icon>         
+        </mat-form-field>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-2">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Role</mat-label>
+          <input matInput formControlName="role" required [formGroup]="editUser">
+          <!-- <mat-select formControlName="role"  placeholder="">
+            <mat-option value="junior">membre junior</mat-option>
+            <mat-option value="senior">membre senior</mat-option>
+            <mat-option value="bex">Bex</mat-option>
+          </mat-select> -->
+        </mat-form-field> 
+
+
+      </div>
+    </div> 
+    <div mat-dialog-action [align]="'end'">
+      <button mat-raised-button color="warn" mat-dialog-close="">close</button>
+      <button style="margin: 8px;" mat-raised-button color="primary" type="submit" >update</button>
+    </div>
+  </form>
+</div>

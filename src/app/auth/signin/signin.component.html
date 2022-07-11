@@ -1,0 +1,78 @@
+<div class="auth-container">
+  <div class="row auth-main">
+    <div class="col-sm-6 px-0 d-none d-sm-block">
+      <div class="left-img" style="background-image: url(assets/photo1.jpg);">
+      </div>
+    </div>
+    <div class="col-sm-6 auth-form-section">
+      <div class="form-section">
+        <div class="auth-wrapper">
+          <h2 class="welcome-msg"> Welcome to JEM </h2>
+          <p class="auth-signup-text text-muted">Need an account?<a routerLink="/signup"
+              class="sign-up-link">Sign up
+            </a></p>
+     
+          <h2 class="login-title">Sign in</h2>
+          <form class="validate-form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label> Email </mat-label>
+                  <input matInput formControlName="email" />
+                  <mat-icon matSuffix>email</mat-icon>
+                  <mat-error >
+                    Email is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xl-12col-lg-12 col-md-12 col-sm-12 mb-2">
+                <mat-form-field class="example-full-width" appearance="outline">
+                  <mat-label>Password</mat-label>
+                  <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" required>
+                  <mat-icon matSuffix (click)="hide = !hide">
+                    {{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  <mat-error *ngIf="authForm.get('password')?.hasError('required')">
+                    Password is required
+                  </mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-5">
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="checkbox" value=""> Remember me
+                  <span class="form-check-sign">
+                    <span class="check"></span>
+                  </span>
+                </label>
+              </div>
+              <a class="txt1" routerLink="/reset">Forgot password?</a>
+            </div>
+            <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+            <div class="container-auth-form-btn">
+              <button mat-flat-button color="primary" class="auth-form-btn" [disabled]="!authForm.valid " type="submit">
+                Login
+              </button>
+            </div>
+          </form>
+          <br>
+          <h5 class="social-login-title">Contact us :</h5>
+          <ul class="list-unstyled social-icon mb-0 mt-3">
+            <li class="list-inline-item"><a href="https://www.instagram.com/junior.entreprise.eniso/?hl=fr" target="_blank" class="rounded">
+                <i class="fab fa-instagram"></i>
+              </a></li>
+            <li class="list-inline-item"><a href="https://www.facebook.com/ENISo.junior.entreprise" target="_blank" class="rounded flex-c-m">
+                <i class="fab fa-facebook-f"></i>
+              </a></li>
+            <li class="list-inline-item"><a href="https://www.linkedin.com/company/junior-entreprise-eniso/" target="_blank" class="rounded">
+                <i class="fab fa-linkedin-in"></i>
+              </a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
