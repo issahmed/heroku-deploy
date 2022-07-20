@@ -34,11 +34,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { TrainingComponent } from './dashboard/admin/training/training.component';
 import { PopupComponent } from './dashboard/admin/training/popup/popup.component';
 import { FormsModule } from '@angular/forms';
-import { MatDialog} from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatDialogModule} from '@angular/material/dialog';
+import { PopUpConfirmationComponent } from './shared-layout/pop-up-confirmation/pop-up-confirmation.component';
+import { PartenariatComponent } from './dashboard/admin/partenariat/partenariat.component';
+import { ProspectingListComponent } from './dashboard/admin/prospecting-list/prospecting-list.component';
+import { ProspectPopUpComponent } from './dashboard/admin/prospecting-list/prospect-pop-up/prospect-pop-up.component';
 
 
 
@@ -60,7 +63,11 @@ import {MatDialogModule} from '@angular/material/dialog';
     AccountsManagerComponent,
     DialogComponent,
     TrainingComponent,
-    PopupComponent
+    PopupComponent,
+    PopUpConfirmationComponent,
+    PartenariatComponent,
+    ProspectingListComponent,
+    ProspectPopUpComponent
   ],
   imports: [
     BrowserModule,

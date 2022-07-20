@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>Edit user account</h1>
 <div mat-dialog-content >
-  <form [formGroup]="editUser" (ngSubmit)="userUpdate()">
+  <form [formGroup]="editUser" >
     <div class="row">
       <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 mb-2">
         <mat-form-field class="example-full-width" appearance="outline">
@@ -49,8 +49,10 @@
       </div>
     </div> 
     <div mat-dialog-action [align]="'end'">
-      <button mat-raised-button color="warn" mat-dialog-close="">close</button>
-      <button style="margin: 8px;" mat-raised-button color="primary" type="submit" >update</button>
+      <button mat-raised-button  mat-dialog-close="">close</button>
+      <button style="margin: 8px;" mat-raised-button color="primary" type="submit" (click)="userUpdate()" >update</button>
+      <button  mat-raised-button color="warn"  (click)="deleteUser()">Delete</button>
+
     </div>
   </form>
 </div>

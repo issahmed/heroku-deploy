@@ -1,11 +1,18 @@
 {
   "sessionlist": [
     {
-      "sessionName": "b",
+      "sessionName": "aaaa",
       "sessionTrainer": "issa@gma",
-      "sessionField": "3",
-      "sessiondate": "2022-07-26T22:00:00.000Z",
+      "sessionField": "2",
+      "sessiondate": "2001-11-30T23:00:00.000Z",
       "id": 1
+    },
+    {
+      "partnerName": "aa",
+      "email": "aa",
+      "representant": "aa",
+      "representantPhone": "aa",
+      "id": 2
     }
   ],
   "userslist": [
@@ -91,6 +98,26 @@
       "position": 9
     },
     {
+      "name": "ghaziz",
+      "lastName": "hamouda",
+      "email": "ahmed@aissa",
+      "phone": " 858585",
+      "role": "membre junior ",
+      "id": 21,
+      "position": 8
+    },
+    {
+      "position": 6,
+      "name": "ahmed",
+      "lastName": "hamouda",
+      "email": "ahmed@aissa",
+      "phone": "85858",
+      "role": "membre junior ",
+      "id": 19
+    }
+  ],
+  "requestslist": [
+    {
       "name": "3abd",
       "lastName": "basat",
       "email": "molka@aissa",
@@ -98,9 +125,7 @@
       "role": "P",
       "id": 10,
       "position": 3
-    }
-  ],
-  "requestslist": [
+    },
     {
       "name": "3abd",
       "lastName": "basat",
@@ -171,33 +196,63 @@
       "role": "membre senior ",
       "id": 18,
       "position": 5
+    }
+  ],
+  "partnerslist": [
+    {
+      "partner": "junior entreprise eniso",
+      "email": "junior@entreprise.com",
+      "representant": "aymen jaziri",
+      "repPhone": "99999999",
+      "contrat": "format pdf"
     },
     {
-      "position": 6,
-      "name": "ahmed",
-      "lastName": "hamouda",
-      "email": "ahmed@aissa",
-      "phone": "85858",
-      "role": "membre junior ",
-      "id": 19
+      "partner": "Nasa ",
+      "email": "nasa@nasouta.com",
+      "representant": "ahmed aissa",
+      "repPhone": "99999999",
+      "contrat": "format pdf"
     },
     {
-      "position": 7,
-      "name": "dali",
-      "lastName": "daloula",
-      "email": "ahmed@aissa",
-      "phone": "58585858",
-      "role": "membre junior ",
-      "id": 20
+      "partner": "bigben",
+      "email": "big@ben.com",
+      "representant": "hadhemi",
+      "repPhone": "99999999",
+      "contrat": "format pdf"
     },
     {
-      "name": "ghaziz",
-      "lastName": "hamouda",
-      "email": "ahmed@aissa",
-      "phone": " 858585",
-      "role": "membre junior ",
-      "id": 21,
-      "position": 8
+      "partner": "tunis",
+      "email": "tunsia@afrique.com",
+      "representant": "saad kaysoun",
+      "repPhone": "99999999",
+      "contrat": "format pdf"
+    },
+    {
+      "partner": "Nasa ",
+      "email": "nasa@nasouta.com",
+      "representant": "ahmed aissa",
+      "repPhone": "99999999",
+      "contrat": "format pdf"
+    }
+  ],
+  "prospectinglist": [
+    {
+      "partner": "aaaa",
+      "email": "big@ben.com",
+      "representant": "hadhemi",
+      "repPhone": "99999999"
+    },
+    {
+      "partner": "bbbbb",
+      "email": "tunsia@afrique.com",
+      "representant": "saad kaysoun",
+      "repPhone": "99999999"
+    },
+    {
+      "partner": "ccccc ",
+      "email": "nasa@nasouta.com",
+      "representant": "ahmed aissa",
+      "repPhone": "99999999"
     }
   ],
   "comments": [

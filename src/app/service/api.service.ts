@@ -55,6 +55,37 @@ export class ApiService {
       return this.http.delete<any>("http://localhost:3000/requestslist/"+id)
     }
   
+     // partners manager
+  
+    getPartners(){
+      return this.http.get<any>("http://localhost:3000/partnerslist/")
+    }
+    // updateProspect(prospect:any,id:number){
+    //   return this.http.put<any>("http://localhost:3000/partnerslist/"+id,prospect)
+    // }
+    // deleteProspect(id:number){
+    //   return this.http.delete<any>("http://localhost:3000/partnerslist/"+id)
+    // }
+
+    // prospecting list manager
+
+    getProspectingList(){
+      return this.http.get<any>("http://localhost:3000/prospectinglist/")
+    }
+
+    confirmedPartner(partner : any){
+      return this.http.post<any>("http://localhost:3000/partnerslist/",partner)
+    }
+    updateProspect(prospect:any,id:number){
+      return this.http.put<any>("http://localhost:3000/prospectinglist/"+id,prospect)
+    }
+    deleteProspect(id:number){
+      return this.http.delete<any>("http://localhost:3000/prospectinglist/"+id)
+    }
+
+    
 
 }
 
+
+  

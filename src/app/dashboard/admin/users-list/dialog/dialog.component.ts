@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ApiService } from 'src/app/service/api.service';
+import { PopUpConfirmationService } from 'src/app/service/pop-up-confirmation.service';
 import { AdminService } from '../../admin.service';
 import { User } from '../../models/user';
 
@@ -20,6 +21,7 @@ export class DialogComponent implements OnInit {
     private dialogRef: MatDialogRef<DialogComponent>,
     private adminService : AdminService ,
     private api : ApiService ,
+    private confirmation : PopUpConfirmationService ,
     @Inject(MAT_DIALOG_DATA) public userData : User
 
     ) { }
@@ -51,6 +53,23 @@ export class DialogComponent implements OnInit {
     })
     this.dialogRef.close([]);
     alert("modification succeed")
+  }
+
+
+  deleteUser(){
+    this.confirmation.openConfirmDialog("are you sure to DELETE this User ?")
+  .afterClosed().subscribe(
+    res => {
+      if(res){
+        this.api.deleteUser(this.userData.id)
+            .subscribe({
+              next:(user)=>{        
+              }
+            })
+            this.dialogRef.close([]);         
+      }
+    }
+    )   
   }
 
 }

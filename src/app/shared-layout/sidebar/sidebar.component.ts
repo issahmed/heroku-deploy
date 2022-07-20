@@ -17,20 +17,29 @@ export class SidebarComponent implements OnInit {
 
   isMenuUsers: boolean = false;
   isMenuTraining: boolean = false;
+  isMenuPartners: boolean = false;
+
 
 
   toggleMenuUsers(): void {
     this.isMenuUsers = !this.isMenuUsers;
   }
-  toggleMenuTraining(): void {
-    this.isMenuTraining = !this.isMenuTraining;
-  }
-
   clickedOutsideUsers(): void {
     this.isMenuUsers = false;
   }
+
+  toggleMenuTraining(): void {
+    this.isMenuTraining = !this.isMenuTraining;
+  }
   clickedOutsideTraining(): void {
     this.isMenuTraining = false;
+  }
+
+  toggleMenuPartners(): void {
+    this.isMenuPartners = !this.isMenuPartners;
+  }
+  clickedOutsidePartners(): void {
+    this.isMenuPartners = false;
   }
 
     

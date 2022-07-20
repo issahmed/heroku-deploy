@@ -1,0 +1,37 @@
+<h1 mat-dialog-title>Add prospect </h1>
+<div mat-dialog-content>
+  <form [formGroup]="sessionForm">
+    
+    <mat-form-field  class="example-full-width" appearance="outline">
+        <mat-label>Partner name</mat-label>
+        <input formControlName="partner" [formGroup]="sessionForm" matInput placeholder="Placeholder">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>email</mat-label>
+      <input formControlName="email" [formGroup]="sessionForm" matInput placeholder="Placeholder">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>representant</mat-label>
+        <input formControlName="representant" [formGroup]="sessionForm" matInput placeholder="Placeholder">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>phone</mat-label>
+        <input formControlName="repPhone" [formGroup]="sessionForm" matInput placeholder="Placeholder">
+      </mat-form-field>
+    
+    <!-- <mat-form-field appearance="fill">
+      <mat-label>Session's date</mat-label>
+      <input formControlName="sessiondate" [formGroup]="sessionForm" matInput [matDatepicker]="picker">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field> -->
+    <div mat-dialog-action [align]="'end'">
+      <button mat-raised-button color="warn" mat-dialog-close="">close</button>
+      <button style="margin: 8px;" mat-raised-button color="primary" (click)="addProspect()">{{actionBtn}}</button>
+    </div>
+  </form>
+</div>

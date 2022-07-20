@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ApiService } from 'src/app/service/api.service';
+import { PopUpConfirmationService } from 'src/app/service/pop-up-confirmation.service';
 import { AdminService } from '../admin.service';
 import { RequestModel } from '../models/request';
 import { User } from '../models/user';
@@ -21,7 +22,8 @@ export class AccountsManagerComponent implements OnInit {
 
 constructor(
   private adminService : AdminService,
-  private api : ApiService
+  private api : ApiService,
+  private confirmation : PopUpConfirmationService
   ) {
 }
 ngOnInit(): void {  
@@ -32,49 +34,47 @@ getAllRequests(){
   return this.api.getRequests()
 }
 
+//  choose the role 
 acceptRequest(element:RequestModel){
-  console.log(element)
-    this.api.postUser(element)    
-      .subscribe({
-              next: (res) => {
-                this.refuseRequest(element)
-             }})
- 
-
-//     this.api.postUser(reqaccepteddata)
-//       .subscribe({
-//         next: (res) => {
-
-//   
-//          
-//         },
-//         error: () => {
-//           alert("error while adding the session")
-
-//         }
-//       })
-//   }
-// }else{
-//     this.updatesession()
-//   }
-
-
-
-
+  this.confirmation.openConfirmDialog("are you sure to accept this request ?")
+  .afterClosed().subscribe(
+    res => {
+      if(res){
+        this.api.postUser(element)    
+        .subscribe({
+                next: (req) => {
+                  this.deleteReq(element)
+               }})
+      }
+    }
+    )
 }
 
 // jawha fesfes
 refuseRequest(req:RequestModel){
-  this.api.deleteReq(req.id)
-  .subscribe({
-    next:()=>{
-      this.requestsSource = this.getAllRequests()
-    },
-    error:()=>{
-      alert("error while deleting request")
+  this.confirmation.openConfirmDialog("are you sure to delete this request ?")
+  .afterClosed().subscribe(
+    res => {
+      if(res){
+        this.deleteReq(req)
+      }
     }
-  })
+    )
 }
+
+// to only delete req without any confirmation
+deleteReq(req:RequestModel){
+  this.api.deleteReq(req.id)
+          .subscribe({
+            next:()=>{
+              this.requestsSource = this.getAllRequests()
+            },
+            error:()=>{
+              alert("error while deleting request")
+            }
+  })     
+}
+
 
 
 
