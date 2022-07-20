@@ -19,7 +19,6 @@ export class DialogComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private dialogRef: MatDialogRef<DialogComponent>,
-    private adminService : AdminService ,
     private api : ApiService ,
     private confirmation : PopUpConfirmationService ,
     @Inject(MAT_DIALOG_DATA) public userData : User

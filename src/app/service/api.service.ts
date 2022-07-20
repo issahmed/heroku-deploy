@@ -60,12 +60,12 @@ export class ApiService {
     getPartners(){
       return this.http.get<any>("http://localhost:3000/partnerslist/")
     }
-    // updateProspect(prospect:any,id:number){
-    //   return this.http.put<any>("http://localhost:3000/partnerslist/"+id,prospect)
-    // }
-    // deleteProspect(id:number){
-    //   return this.http.delete<any>("http://localhost:3000/partnerslist/"+id)
-    // }
+    updatePartners(partner:any,id:number){
+      return this.http.put<any>("http://localhost:3000/partnerslist/"+id,partner)
+    }
+    deletePartner(id:number){
+      return this.http.delete<any>("http://localhost:3000/partnerslist/"+id)
+    }
 
     // prospecting list manager
 
@@ -76,6 +76,11 @@ export class ApiService {
     confirmedPartner(partner : any){
       return this.http.post<any>("http://localhost:3000/partnerslist/",partner)
     }
+
+    addPartner(partner : any){
+      return this.http.post<any>("http://localhost:3000/prospectinglist/",partner)
+    }
+
     updateProspect(prospect:any,id:number){
       return this.http.put<any>("http://localhost:3000/prospectinglist/"+id,prospect)
     }
