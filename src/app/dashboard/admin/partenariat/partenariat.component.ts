@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/service/api.service';
+import { PopUpConfirmationService } from 'src/app/service/pop-up-confirmation.service';
+import { PopUpConfirmationComponent } from 'src/app/shared-layout/pop-up-confirmation/pop-up-confirmation.component';
 import { ProspectPopUpComponent } from '../prospecting-list/prospect-pop-up/prospect-pop-up.component';
 
 @Component({
@@ -15,6 +18,7 @@ export class PartenariatComponent implements OnInit {
   constructor(
     private api :ApiService,
     private dialog: MatDialog ,
+    private confirmation : PopUpConfirmationService
 
   ) { }
 
@@ -25,10 +29,12 @@ export class PartenariatComponent implements OnInit {
   }
 
   getAllPartners() {
+
+
     this.api.getPartners()
       .subscribe({
         next: (list) => {
-          this.dataSource=list    
+          this.dataSource= new MatTableDataSource(list)
         },
         error: (err) => {
           alert("error while fetching")
@@ -49,18 +55,28 @@ export class PartenariatComponent implements OnInit {
   }
 
   delete(element :any){
-    this.api.deletePartner(element.id)
-    .subscribe({
-        next:()=>{
-          this.getAllPartners()
-           },
-                error:()=>{
-                   alert("error while deleting request")
-                    }                
-                })
-                     
-    
+    this.confirmation.openConfirmDialog("are you sure to delete this partner ?")
+    .afterClosed().subscribe(
+      res => {
+        if(res){
+          this.api.deletePartner(element.id)
+          .subscribe({
+              next:()=>{
+                this.getAllPartners()
+                },
+                      error:()=>{
+                        alert("error while deleting request")
+                          }                
+                      })        
+        }
+      }
+      )
+  }
 
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
 }

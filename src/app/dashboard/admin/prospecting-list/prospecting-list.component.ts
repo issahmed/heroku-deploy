@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/service/api.service';
 import { PopUpConfirmationService } from 'src/app/service/pop-up-confirmation.service';
 import { ProspectPopUpComponent } from './prospect-pop-up/prospect-pop-up.component';
@@ -10,7 +11,7 @@ import { ProspectPopUpComponent } from './prospect-pop-up/prospect-pop-up.compon
   styleUrls: ['./prospecting-list.component.sass']
 })
 export class ProspectingListComponent implements OnInit {
-
+  
   displayedColumns: string[] = ['partner', 'email', 'representant', 'representant phone','Decision'];
   dataSource : any ;
   constructor(
@@ -62,17 +63,11 @@ export class ProspectingListComponent implements OnInit {
       )
   } 
 
-  // refuseRequest(req:any){
-  //   this.confirmation.openConfirmDialog("are you sure to delete this request ?")
-  //   .afterClosed().subscribe(
-  //     res => {
-  //       if(res){
-  //         this.deleteReq(req)
-  //       }
-  //     }
-  //     )
-  // }
-  
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();    
+ }
+
   // to only delete req without any confirmation
   deleteProspectAfterConfirmed(element:any){
     this.api.deleteProspect(element.id)
@@ -85,14 +80,12 @@ export class ProspectingListComponent implements OnInit {
               }
     })     
   }
-  
-
 
   getProspecting() {
     this.api.getProspectingList()
       .subscribe({
         next: (list) => {
-          this.dataSource=list    
+          this.dataSource= new MatTableDataSource(list)  
         },
         error: (err) => {
           alert("error while fetching")

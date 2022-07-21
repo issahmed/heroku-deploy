@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ApiService } from 'src/app/service/api.service';
+import { PopUpConfirmationService } from 'src/app/service/pop-up-confirmation.service';
 import { PopUpConfirmationComponent } from 'src/app/shared-layout/pop-up-confirmation/pop-up-confirmation.component';
 import { PopupComponent } from '../../training/popup/popup.component';
 
@@ -17,11 +18,9 @@ export class ProspectPopUpComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private api: ApiService,
-   // private confirmation : PopUpConfirmationComponent,
+    private confirmation : PopUpConfirmationService,
     @Inject(MAT_DIALOG_DATA) public editData : any,
-    private dialogRef: MatDialogRef<PopupComponent>,
-    //private dialog: MatDialog ,
-
+    private dialogRef: MatDialogRef<PopupComponent>
   ) { }
 
   
@@ -41,22 +40,26 @@ ngOnInit() {
       }
     }
 
- 
   addProspect() {
-
-    console.log("hello "  + this.sessionForm.value)
     if (! this.editData[0]){
-    if (this.sessionForm.valid) {     
-      this.api.addPartner(this.sessionForm.value)
-        .subscribe({
-          next: (res) => {
-            this.sessionForm.reset();
-            this.dialogRef.close();           
-          },
-          error: () => {
-            alert("error while adding the session")
-          }
-        })
+    if (this.sessionForm.valid) {  
+      this.confirmation.openConfirmDialog("are you sure to add this prospect ?")
+      .afterClosed().subscribe(
+        res => {
+          if(res){
+            this.api.addPartner(this.sessionForm.value)
+                .subscribe({
+                  next: (res) => {
+                    this.sessionForm.reset();
+                    this.dialogRef.close();           
+                  },
+                  error: () => {
+                    alert("error while adding the session")
+                  }
+                 })
+            }
+        }
+      )  
     }
   }else{
       this.updatesession()
@@ -65,7 +68,11 @@ ngOnInit() {
 
 updatesession(){
   if (this.editData[1]=="partners"){
-    this.api.updatePartners(this.sessionForm.value,this.editData[0].id)
+    this.confirmation.openConfirmDialog("are you sure to update this partner ?")
+      .afterClosed().subscribe(
+        res => {
+          if(res){
+            this.api.updatePartners(this.sessionForm.value,this.editData[0].id)
       .subscribe({
         next:(res)=>{
           this.sessionForm.reset();
@@ -73,32 +80,50 @@ updatesession(){
         },
         error:()=>{alert("error while updating")}
       })
+            
+            }
+        }
+      )  
   }else if (this.editData[1]=="prospecting") {
-  this.api.updateProspect(this.sessionForm.value,this.editData[0].id)
-  .subscribe({
-    next:(res)=>{
-      this.sessionForm.reset();
-      this.dialogRef.close('update');
-    },
-    error:()=>{alert("error while updating")}
-  })
+      this.confirmation.openConfirmDialog("are you sure to update this prospect ?")
+      .afterClosed().subscribe(
+        res => {
+          if(res){
+                this.api.updateProspect(this.sessionForm.value,this.editData[0].id)
+                  .subscribe({
+                    next:(res)=>{
+                      this.sessionForm.reset();
+                      this.dialogRef.close('update');
+                    },
+                    error:()=>{alert("error while updating")}
+                  })          
+                }
+        })
+    }
 }
-}
+
 
 deleteProspect(){ 
 
-  this.api.deleteProspect(this.editData[0].id)
-      .subscribe({
-          next:()=>{
-             },
-                  error:()=>{
-                     alert("error while deleting request")
-                      }                
-                  })
-                        this.dialogRef.close([]);  
-      
+  this.confirmation.openConfirmDialog("are you sure to delete this prospect ?")
+  .afterClosed().subscribe(
+    res => {
+      if(res){
+          this.api.deleteProspect(this.editData[0].id)
+          .subscribe({
+              next:()=>{
+                },
+                      error:()=>{
+                        alert("error while deleting request")
+                          }                
+            })
+            this.dialogRef.close([]);                 
+            }
+    })
+}
+
 }
 
 
 
-}
+
