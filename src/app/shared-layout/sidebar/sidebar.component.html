@@ -16,8 +16,10 @@
 
 
 
-        
-      <a  (click)="toggleMenuPartners()" mat-list-item >
+      <a 
+       (click)="toggleMenuPartners()"
+       mat-list-item 
+       routerLinkActive="list-item-active" routerLink="/dashboard/partenariat-kpis">
         Partenariat 
         <mat-icon>keyboard_arrow_down</mat-icon>
       </a>
@@ -43,15 +45,15 @@
 
     
     <div mat-list-item  clickOutside (clickOutside)="toggleMenuUsers()">     
-      <a  (click)="toggleMenuUsers()" mat-list-item  >
-        accounts manager 
+      <a  (click)="toggleMenuUsers()" mat-list-item  routerLink="/dashboard/accounts-kpis"   >
+        Users
         <mat-icon>keyboard_arrow_down</mat-icon>
       </a>
       <div *ngIf="isMenuUsers">
         <ul>
         <li>
             <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/accounts-manager" > 
-              Requests
+              Waiting list 
               <mat-icon >edit</mat-icon> 
             </a>      
         </li>

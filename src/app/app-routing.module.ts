@@ -4,9 +4,11 @@ import { EmailConfirmationComponent } from './auth/email-confirmation/email-conf
 import { ResetComponent } from './auth/reset/reset.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { AccountsKPIsComponent } from './dashboard/admin/accounts-kpis/accounts-kpis.component';
 import { AccountsManagerComponent } from './dashboard/admin/accounts-manager/accounts-manager.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { HomeComponent } from './dashboard/admin/home/home.component';
+import { PartenariatKPIsComponent } from './dashboard/admin/partenariat-kpis/partenariat-kpis.component';
 import { PartenariatComponent } from './dashboard/admin/partenariat/partenariat.component';
 import { ProspectingListComponent } from './dashboard/admin/prospecting-list/prospecting-list.component';
 import { TrainingComponent } from './dashboard/admin/training/training.component';
@@ -27,7 +29,13 @@ const routes: Routes = [
       {path : 'accounts-manager' , component : AccountsManagerComponent},
       {path : 'training' , component : TrainingComponent},
       {path : 'partenariat' , component : PartenariatComponent},
-      {path : 'prospectinglist' , component : ProspectingListComponent}
+      {path : 'prospectinglist' , component : ProspectingListComponent},
+      {path : 'partenariat-kpis' , component : PartenariatKPIsComponent},
+      {path : 'accounts-kpis' , component : AccountsKPIsComponent}
+
+
+
+      
 
     ]
   },

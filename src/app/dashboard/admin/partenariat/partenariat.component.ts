@@ -3,7 +3,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/service/api.service';
 import { PopUpConfirmationService } from 'src/app/service/pop-up-confirmation.service';
-import { PopUpConfirmationComponent } from 'src/app/shared-layout/pop-up-confirmation/pop-up-confirmation.component';
 import { ProspectPopUpComponent } from '../prospecting-list/prospect-pop-up/prospect-pop-up.component';
 
 @Component({
@@ -30,7 +29,6 @@ export class PartenariatComponent implements OnInit {
 
   getAllPartners() {
 
-
     this.api.getPartners()
       .subscribe({
         next: (list) => {
@@ -40,7 +38,6 @@ export class PartenariatComponent implements OnInit {
           alert("error while fetching")
         }
       })
-
   }
 
   edit(element : any){
@@ -72,7 +69,6 @@ export class PartenariatComponent implements OnInit {
       }
       )
   }
-
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;

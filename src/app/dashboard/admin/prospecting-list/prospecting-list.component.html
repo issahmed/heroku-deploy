@@ -47,18 +47,18 @@
               <ng-container matColumnDef="Decision">
                 <th mat-header-cell *matHeaderCellDef  >  </th>
                 <td mat-cell  *matCellDef="let element;  ">
-                    <button mat-raised-button
+                    <button mat-icon-button
                     class="m-3" 
                     color="primary"
                     (click)="confirmed(element)"             
-                    >Confirmed</button> 
+                    >
+                    <mat-icon>done</mat-icon> 
+                    </button> 
                         
-                    <button mat-raised-button 
-                        style="
-                        background-color: rgb(39, 215, 51);
-                        color: white;"
+                    <button mat-icon-button 
                         (click)="edit(element)"
-                        >Edit 
+                        >
+                        <mat-icon>edit</mat-icon> 
                       </button>                                   
                 </td>
                 

@@ -42,9 +42,12 @@ import { PopUpConfirmationComponent } from './shared-layout/pop-up-confirmation/
 import { PartenariatComponent } from './dashboard/admin/partenariat/partenariat.component';
 import { ProspectingListComponent } from './dashboard/admin/prospecting-list/prospecting-list.component';
 import { ProspectPopUpComponent } from './dashboard/admin/prospecting-list/prospect-pop-up/prospect-pop-up.component';
-
-
-
+import { CardComponent } from './KPIs/card/card.component';
+import { HighchartsChartModule } from 'highcharts-angular';
+import { PieComponent } from './KPIs/pie/pie.component';
+import { LinesComponent } from './KPIs/lines/lines.component';
+import { PartenariatKPIsComponent } from './dashboard/admin/partenariat-kpis/partenariat-kpis.component';
+import { AccountsKPIsComponent } from './dashboard/admin/accounts-kpis/accounts-kpis.component';
 
 
 @NgModule({
@@ -67,7 +70,12 @@ import { ProspectPopUpComponent } from './dashboard/admin/prospecting-list/prosp
     PopUpConfirmationComponent,
     PartenariatComponent,
     ProspectingListComponent,
-    ProspectPopUpComponent
+    ProspectPopUpComponent,
+    CardComponent,
+    PieComponent,
+    LinesComponent,
+    PartenariatKPIsComponent,
+    AccountsKPIsComponent
   ],
   imports: [
     BrowserModule,
@@ -95,10 +103,14 @@ import { ProspectPopUpComponent } from './dashboard/admin/prospecting-list/prosp
     HttpClientModule,
     MatPaginatorModule,
     MatSortModule,
-
-
+    HighchartsChartModule,
     
     
+    
+    
+    
+    
+ 
   ],
   providers: [  
      // AuthService,

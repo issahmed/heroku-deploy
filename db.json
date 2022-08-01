@@ -6,13 +6,6 @@
       "sessionField": "2",
       "sessiondate": "2001-11-30T23:00:00.000Z",
       "id": 1
-    },
-    {
-      "partnerName": "aa",
-      "email": "aa",
-      "representant": "aa",
-      "representantPhone": "aa",
-      "id": 2
     }
   ],
   "userslist": [
@@ -216,35 +209,21 @@
       "id": 3
     },
     {
-      "partner": "ecole",
+      "partner": "schooljhgjg",
       "email": "ecole@ecole",
       "representant": "xx",
       "repPhone": "1010101",
       "id": 4
     },
     {
-      "partner": "cafe",
-      "email": "cafe@gmail.com",
-      "representant": "xxxxxx",
-      "repPhone": "987987987",
-      "id": 5
-    },
-    {
-      "partner": "EPI",
-      "email": "epi@gmail.com",
-      "representant": "Salma",
-      "repPhone": "64684",
-      "id": 9
-    }
-  ],
-  "prospectinglist": [
-    {
-      "partner": "Novacity",
+      "partner": "Novation city",
       "email": "nova@gmail.com",
       "representant": "Mohammed Ali",
       "repPhone": "5050505",
       "id": 100001
-    },
+    }
+  ],
+  "prospectinglist": [
     {
       "partner": "eniso",
       "email": "eniso@gmail.com probleme d'ajout ?,",
