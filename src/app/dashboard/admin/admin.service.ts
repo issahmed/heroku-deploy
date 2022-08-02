@@ -15,7 +15,6 @@ export class AdminService {
   userRefused = new EventEmitter<number>();
   userSelectedindex = new EventEmitter<number>();
 
-
   name: string;
   lastName : string ;
   email : string ;
@@ -25,7 +24,7 @@ export class AdminService {
   id : number ;
 
 
-   users = [
+  users = [
     {position: 1, name: 'molka', lastName:'louka', email: 'molka@moll', phone: ' 8888888', role : "RH",id :0},
     {position: 2, name: 'ilyes', lastName:'dali', email: 'ilyes@dali', phone: ' 77777777', role : "VP ",id :1},
     {position: 3, name: 'molka', lastName:'prr', email: 'molka@aissa', phone: ' 50123102', role : "P ",id :2},
@@ -37,7 +36,7 @@ export class AdminService {
     {position: 9, name: 'aziz', lastName:'front', email: 'ahmed@aissa', phone: ' 858585', role : "membre junior ",id :8},
   ];
 
-   requests = [
+  requests = [
     {position: 1, name: 'molka', lastName:'louka', email: 'molka@moll', phone: ' 8888888', date :"12/12/2022"},
     {position: 2, name: 'ilyes', lastName:'dali', email: 'ilyes@dali', phone: ' 77777777',date :"11/11/2020"},
     {position: 3, name: 'molka', lastName:'prr', email: 'molka@aissa', phone: ' 50123102',date :"10/10/1000"},
@@ -87,14 +86,14 @@ export class AdminService {
   )
  }
 
-ngOnInit(){
-  this.userRefused.subscribe(
-    (index:number)=>{
-      this.requests.splice(index, 1)
-      this.requestsSource= this.getRequests() ;  
-      }
-  )
-    }
+// ngOnInit(){
+//   this.userRefused.subscribe(
+//     (index:number)=>{
+//       this.requests.splice(index, 1)
+//       this.requestsSource= this.getRequests() ;  
+//       }
+//   )
+//     }
 
 }
 
