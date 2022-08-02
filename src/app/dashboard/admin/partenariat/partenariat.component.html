@@ -36,14 +36,16 @@
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> representant phone </th>
                 <td mat-cell *matCellDef="let row"> {{row.repPhone}} </td>
               </ng-container>
+
               <ng-container matColumnDef="contrat(PDF)">
                 <th mat-header-cell *matHeaderCellDef mat-sort-header> Contrat(PDF) </th>
-                <td mat-cell *matCellDef="let row"> {{row.contrat}} </td>
+                <td mat-cell *matCellDef="let row">
+                  <a href="assets/contract.pdf" download> {{row.contrat}}</a>                   
+                  </td>
               </ng-container>
-  
-              
+
               <ng-container matColumnDef="Action">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header>  </th>
+                <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
                 <td mat-cell *matCellDef="let row">
                   <button mat-icon-button
                     color="primary"

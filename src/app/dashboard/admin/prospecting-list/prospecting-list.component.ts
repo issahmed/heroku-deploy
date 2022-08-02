@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/service/api.service';
 import { PopUpConfirmationService } from 'src/app/service/pop-up-confirmation.service';
+import { PopUpConfirmationComponent } from 'src/app/shared-layout/pop-up-confirmation/pop-up-confirmation.component';
 import { ProspectPopUpComponent } from './prospect-pop-up/prospect-pop-up.component';
 
 @Component({

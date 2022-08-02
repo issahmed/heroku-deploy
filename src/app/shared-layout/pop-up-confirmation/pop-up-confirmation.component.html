@@ -4,5 +4,13 @@
       <span class="content-span full-width">{{data.message}}</span>
     </div>
     <button mat-flat-button id="no-button" [mat-dialog-close]="false">NO</button>
-    <button mat-flat-button id="yes-button" [mat-dialog-close]="true">YES</button>
+    <button  *ngIf="data.message!='are you sure to add this prospect as partner ?'" mat-flat-button id="yes-button"  [mat-dialog-close]="true"  >YES</button>
+    <button *ngIf="data.message=='are you sure to add this prospect as partner ?'" mat-flat-button   (click)="addContrat()">yeye</button>
+
+  </div>
+
+  <div *ngIf="data.message=='are you sure to add this prospect as partner ?' && clicked==true">
+    <input type="file" (change)="getFile($event)" value="upload the contrat (pdf)"> <br><br>
+    <input type="button" value=" upload file "  [mat-dialog-close]="true" >
+
   </div>
