@@ -95,4 +95,25 @@ export class ProspectingListComponent implements OnInit {
   }
 
 
+  deleteProspect(element :any){
+    this.confirmation.openConfirmDialog("are you sure to delete this prospect  ?")
+    .afterClosed().subscribe(
+      res => {
+        if(res){
+          this.api.deleteProspect(element.id)
+          .subscribe({
+              next:()=>{
+                this.getProspecting()
+                },
+                      error:()=>{
+                        alert("error while deleting request")
+                          }                
+                      })        
+        }
+      }
+      )
+  }
+
+
+
 }

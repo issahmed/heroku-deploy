@@ -32,7 +32,6 @@
     <div mat-dialog-action [align]="'end'">
       <button mat-raised-button color="warn" mat-dialog-close="">close</button>
       <button style="margin: 8px;" mat-raised-button color="primary" (click)="addProspect()">{{actionBtn}}</button>
-      <button *ngIf="this.editData[1]=='prospecting'" mat-raised-button style="background-color: rgb(199, 85, 36) ;"  (click)="deleteProspect()">delete</button>
     </div>
   </form>
 </div>

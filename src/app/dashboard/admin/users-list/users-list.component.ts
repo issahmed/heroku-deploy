@@ -2,6 +2,7 @@ import { Component, OnInit  , OnDestroy} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 import { ApiService } from 'src/app/service/api.service';
+import { PopUpConfirmationService } from 'src/app/service/pop-up-confirmation.service';
 import { AdminService } from '../admin.service';
 import { User } from '../models/user';
 import { DialogComponent } from './dialog/dialog.component';
@@ -27,7 +28,8 @@ usersSource : any;
 constructor(
   private adminService : AdminService,
   private dialog: MatDialog,
-  private api: ApiService
+  private api: ApiService,
+  private confirmation : PopUpConfirmationService
   ) 
   {}
 
@@ -60,20 +62,35 @@ ngOnInit(): void {
 
   }
 
- getAllUsers() {
-       this.api.getUsers()
-        .subscribe({
-           next: (users) => {
-            this.usersSource= users           
-           },
-           error: (err) => {
-          alert("error while fetching")
-          }
-        })
-}
-      
-  
+ getAllUsers() 
+  {
+        this.api.getUsers()
+          .subscribe({
+            next: (users) => {
+              this.usersSource= users           
+            },
+            error: (err) => {
+            alert("error while fetching")
+            }
+          })
+  }
 
+  deleteUser(element:any){
+    this.confirmation.openConfirmDialog("are you sure to DELETE this User ?")
+  .afterClosed().subscribe(
+    res => {
+      if(res){
+        this.api.deleteUser(element.id)
+            .subscribe({
+              next:(user)=>{
+                this.getAllUsers()        
+              }
+            })
+      }
+    }
+    )   
+  }
+      
 
 }
 

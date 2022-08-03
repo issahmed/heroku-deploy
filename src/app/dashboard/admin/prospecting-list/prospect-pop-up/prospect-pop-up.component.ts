@@ -103,24 +103,24 @@ updatesession(){
 }
 
 
-deleteProspect(){ 
+// deleteProspect(){ 
 
-  this.confirmation.openConfirmDialog("are you sure to delete this prospect ?")
-  .afterClosed().subscribe(
-    res => {
-      if(res){
-          this.api.deleteProspect(this.editData[0].id)
-          .subscribe({
-              next:()=>{
-                },
-                      error:()=>{
-                        alert("error while deleting request")
-                          }                
-            })
-            this.dialogRef.close([]);                 
-            }
-    })
-}
+//   this.confirmation.openConfirmDialog("are you sure to delete this prospect ?")
+//   .afterClosed().subscribe(
+//     res => {
+//       if(res){
+//           this.api.deleteProspect(this.editData[0].id)
+//           .subscribe({
+//               next:()=>{
+//                 },
+//                       error:()=>{
+//                         alert("error while deleting request")
+//                           }                
+//             })
+//             this.dialogRef.close([]);                 
+//             }
+//     })
+// }
 
 }
 

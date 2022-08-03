@@ -17,24 +17,6 @@
   ],
   "userslist": [
     {
-      "name": "molkaaa",
-      "lastName": "loukaa",
-      "email": "molka@moll",
-      "phone": "8888888",
-      "role": "RH",
-      "id": 0,
-      "position": 1
-    },
-    {
-      "name": "ilyess",
-      "lastName": "dalipmpmpmpm",
-      "email": "ilyes@dali",
-      "phone": " 77777777",
-      "role": "VP ",
-      "id": 1,
-      "position": 2
-    },
-    {
       "name": "molka",
       "lastName": "mezyena",
       "email": "molka@aissa",
@@ -117,24 +99,6 @@
     }
   ],
   "requestslist": [
-    {
-      "name": "3abd",
-      "lastName": "basat",
-      "email": "molka@aissa",
-      "phone": "50123102",
-      "role": "P",
-      "id": 10,
-      "position": 3
-    },
-    {
-      "name": "3abd",
-      "lastName": "basat",
-      "email": "molka@aissa",
-      "phone": "50123102",
-      "role": "P",
-      "id": 11,
-      "position": 3
-    },
     {
       "name": "Si ahmed",
       "lastName": "aissa",
@@ -238,14 +202,9 @@
       "repPhone": "99999999",
       "contrat": "format pdf",
       "id": 10
-    },
-    {
-      "partner": "fhjf",
-      "email": "ghfg",
-      "representant": "hfgh",
-      "repPhone": "fggfh",
-      "id": 8
-    },
+    }
+  ],
+  "prospectinglist": [
     {
       "partner": "aaaa",
       "email": "big@ben.com",
@@ -254,41 +213,18 @@
       "id": 5
     },
     {
-      "partner": "ccccc ",
-      "email": "nasa@nasouta.com",
-      "representant": "ahmed aissa",
-      "repPhone": "99999999",
-      "id": 7
-    },
-    {
-      "partner": "dfg",
-      "email": "dfgfg",
-      "representant": "gg",
-      "repPhone": "g",
-      "id": 9
-    },
-    {
       "partner": "bbbbb",
       "email": "tunsia@afrique.com",
       "representant": "saad kaysoun",
       "repPhone": "99999999",
       "id": 6
-    }
-  ],
-  "prospectinglist": [
-    {
-      "partner": "dfhfg",
-      "email": "fghfg",
-      "representant": "hdfghg",
-      "repPhone": "kik",
-      "id": 8
     },
     {
-      "partner": "fgh",
-      "email": "fghgfh",
-      "representant": "h",
-      "repPhone": "h",
-      "id": 9
+      "partner": "ccccc ",
+      "email": "nasa@nasouta.com",
+      "representant": "ahmed aissa",
+      "repPhone": "99999999",
+      "id": 7
     }
   ],
   "comments": [
