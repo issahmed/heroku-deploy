@@ -4,7 +4,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { ApiService } from 'src/app/service/api.service';
 import { PopUpConfirmationService } from 'src/app/service/pop-up-confirmation.service';
 import { PopUpConfirmationComponent } from 'src/app/shared-layout/pop-up-confirmation/pop-up-confirmation.component';
-import { PopupComponent } from '../../training/popup/popup.component';
+import { PopupComponent } from '../../../training/popup/popup.component';
 
 @Component({
   selector: 'app-prospect-pop-up',

@@ -1,0 +1,86 @@
+<div class="container-fluid page">
+  <div class="d-flex page__box p-3 mt-0"> Task manager  </div>
+      <div class="page__content shadow p-3 position-relative">
+        <div class="container" >
+
+          <button mat-stroked-button (click)="add()"style="margin: 10px;" >
+            <b>+  add new task</b>
+            </button>
+            <mat-form-field appearance="standard">
+              <mat-label>Filter</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+            </mat-form-field>
+            <div class="mat-elevation-z8">
+                <table mat-table
+                  [dataSource]="data" multiTemplateDataRows class="mat-elevation-z8">
+                  <ng-container matColumnDef="task">
+                    <th mat-header-cell *matHeaderCellDef  > Task </th>
+                    <td mat-cell *matCellDef="let element">
+                      <h3>
+                        <b> {{element.task}}  </b> </h3>
+                      </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="assigned_to">
+                    <th mat-header-cell *matHeaderCellDef > assigned_to </th>
+                    <td mat-cell *matCellDef="let element"> {{element.assigned_to.role}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="due_day">
+                    <th mat-header-cell *matHeaderCellDef > due_day </th>
+                    <td mat-cell *matCellDef="let element"> {{element.due_day}} </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="priority">
+                    <th mat-header-cell *matHeaderCellDef > priority </th>
+                    <td mat-cell *matCellDef="let element"> 
+                      {{element.priority.priority}}
+                    </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="expand">
+                    <th mat-header-cell *matHeaderCellDef aria-label="row actions">&nbsp;</th>
+                    <td mat-cell *matCellDef="let element">
+                      <button mat-icon-button aria-label="expand row" (click)="(expandedElement = expandedElement === element ? null : element); $event.stopPropagation()">
+                        <mat-icon *ngIf="expandedElement !== element">keyboard_arrow_down</mat-icon>
+                        <mat-icon *ngIf="expandedElement === element">keyboard_arrow_up</mat-icon>
+                      </button>
+                    </td>
+                  </ng-container>
+
+                  <ng-container matColumnDef="expandedDetail">
+                    <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplayWithExpand.length">
+                      <div class="example-element-detail"
+                          [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                        <div >
+                          <h2>More details about the task : <p>{{element.details}}</p>  </h2> 
+                            <div style="display:flex ;">                           
+                              <h4 style=""> Start Day :<p>Lundi le 6/6/2022</p> </h4>
+                              <h4 style="margin-left: 50px;">End Day :  <p>Samedi  le 6/8/2022 </p></h4>
+                            </div> 
+                            <div >
+                              <button mat-flat-button 
+                              style="background-color: green; color:white; margin-right: 20px;"
+                              (click)="update(element)"
+                              >update</button>
+                              <button mat-flat-button color="warn" 
+                              style="margin-bottom: 20px;"
+                              (click)="deleteTask(element)">Delete</button>
+                            </div>                                              
+                        </div>
+                      </div>
+                    </td>
+                  </ng-container>
+
+                  <tr mat-header-row *matHeaderRowDef="columnsToDisplayWithExpand"></tr>
+                  <tr mat-row *matRowDef="let element; columns: columnsToDisplayWithExpand;"
+                      class="example-element-row"
+                      [class.example-expanded-row]="expandedElement === element"
+                      (click)="expandedElement = expandedElement === element ? null : element">
+                  </tr>
+                  <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+</div>

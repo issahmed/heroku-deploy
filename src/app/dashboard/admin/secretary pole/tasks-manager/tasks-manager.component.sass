@@ -1,0 +1,122 @@
+table 
+  width: 100%
+
+
+tr.example-detail-row 
+  height: 0
+
+
+tr.example-element-row:not(.example-expanded-row):hover 
+  background: whitesmoke
+lement-row:not(.example-expanded-row):active 
+  background: #efefef
+
+
+.example-element-row td 
+  border-bottom-width: 0
+
+
+.example-element-detail 
+  overflow: hidden
+  display: flex
+
+
+// .example-element-diagram 
+//   min-width: 80px
+//   border: 2px solid black
+//   padding: 8px
+//   font-weight: lighter
+//   margin: 8px 0
+//   height: 104px
+
+
+.example-element-task 
+  font-weight: bold
+  font-size: 50px
+  line-height: normal
+
+.example-element-etat 
+  padding: 16px
+
+
+.example-element-description-attribution 
+  opacity: 0.5
+
+
+.mat-column-task 
+  word-wrap: break-word !important
+  white-space: unset !important
+  flex: 10% 0 25% !important
+  width: 59% !important
+  overflow-wrap: break-word
+  word-wrap: break-word
+  word-break: break-word
+
+  -ms-hyphens: auto
+  -moz-hyphens: auto
+  -webkit-hyphens: auto
+  hyphens: auto
+
+
+.mat-column-assigned_to 
+  word-wrap: break-word !important
+  white-space: unset !important
+  flex: 0 0 17% !important
+  width: 17% !important
+  overflow-wrap: break-word
+  word-wrap: break-word
+  word-break: break-word
+  -ms-hyphens: auto
+  -moz-hyphens: auto
+  -webkit-hyphens: auto
+  hyphens: auto
+
+  .mat-column-etat 
+  word-wrap: break-word !important
+  white-space: unset !important
+  flex: 0 0 17% !important
+  width: 17% !important
+  overflow-wrap: break-word
+  word-wrap: break-word
+  word-break: break-word
+  -ms-hyphens: auto
+  -moz-hyphens: auto
+  -webkit-hyphens: auto
+  hyphens: auto
+
+// sass must be imported 
+.page 
+  color: white
+  padding: 0 0rem
+  background: #f1f5f9
+  &__box 
+    min-height: 90px
+    background: #1e293b
+    margin: 0 0rem
+    font-size: 40px
+  
+  &__content 
+    min-height: calc(100vh - 133px)
+    border-radius: 10px
+    margin-top: -2rem
+    background: white
+    color: black
+    font-size: 2rem
+    &-data 
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+
+
+table 
+  width: 100%
+
+
+.mat-form-field 
+  font-size: 14px
+  width: 100%
+
+.container
+  max-width: 1200px
+  margin: 0 auto
+

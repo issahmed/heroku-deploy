@@ -1,0 +1,78 @@
+<h1 mat-dialog-title> Add new Task </h1>
+<div  >
+  <form [formGroup]="editTask"  >
+
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-1">
+            <mat-form-field class="example-full-width" appearance="standard">
+                <mat-label>Task</mat-label>
+                <input matInput formControlName="task" required [formGroup]="editTask">
+                <mat-icon matSuffix>create</mat-icon>
+            </mat-form-field>
+        </div>
+    </div>
+
+    <div class="row">
+        <mat-form-field class="example-full-width" appearance="standard">
+            <mat-label>Description </mat-label>
+            <textarea matInput 
+            formControlName="description"
+            name="Details of the task (option) " rows="2" 
+            [formGroup]="editTask"></textarea>
+        </mat-form-field>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 mb-2">
+            <mat-form-field class="example-full-width" appearance="standard">
+                    <mat-label>Assigned to </mat-label>
+                            <mat-select formControlName="assignedTo" 
+                            [formGroup]="editTask"
+                            [(ngModel)]="roleSelected"
+                             >
+                                <mat-option *ngFor="let role of roles" [value]="role.id">{{role.role}}</mat-option>
+                            </mat-select> 
+            </mat-form-field>
+        </div>
+    
+
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 mb-2">
+        <mat-form-field class="example-full-width" appearance="standard">
+            <mat-label>Priority</mat-label>
+            <mat-select  formControlName="priority" [formGroup]="editTask" [(ngModel)]="prioritySelected" >
+                <ng-container class="circle">
+                    <mat-option [value]="0">lower </mat-option>
+                    <mat-option [value]="1">normal </mat-option>
+                    <mat-option [value]="2">higher </mat-option>
+                </ng-container>
+                </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="col-xl-6  col-lg-6 col-md-6 col-sm-6 mb-2">
+        <mat-form-field  appearance="standard">
+            <mat-label>start date – end date</mat-label>
+            <mat-date-range-input
+              [formGroup]="campaignTwo"
+              [rangePicker]="campaignTwoPicker"
+              [comparisonStart]="campaignOne.value.start"
+              [comparisonEnd]="campaignOne.value.end">
+              <input matStartDate placeholder="Start date" formControlName="start">
+              <input matEndDate placeholder="End date" formControlName="end">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="campaignTwoPicker"></mat-datepicker-toggle>
+            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+            <mat-date-range-picker #campaignTwoPicker></mat-date-range-picker>
+        </mat-form-field>
+    </div>
+    </div>
+    
+    <div mat-dialog-action [align]="'end'">
+      <button mat-raised-button  mat-dialog-close="">close</button>
+      <button  *ngIf="actionBtn=='update'" style="margin: 8px;" mat-raised-button color="primary" type="submit" (click)="updateTask()" >Update </button>
+      <button *ngIf="actionBtn!='update'" style="margin: 8px;" mat-raised-button color="primary" type="submit" (click)="addTask()" >Add </button>
+    </div>
+    
+
+  </form>
+
+</div>

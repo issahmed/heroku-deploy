@@ -88,6 +88,23 @@ export class ApiService {
       return this.http.delete<any>("http://localhost:3000/prospectinglist/"+id)
     }
 
+    // tasks manager
+
+    postTask(task : any){
+      return this.http.post<any>("http://localhost:3000/tasksList/",task)
+    }
+    getTasks(){
+      return this.http.get<any[]>("http://localhost:3000/tasksList/")
+    }
+    putTask(task:any,id:number){
+      return this.http.put<any>("http://localhost:3000/tasksList/"+id,task)
+    }
+    deleteTask(id:number){
+      return this.http.delete<any>("http://localhost:3000/tasksList/"+id)
+    }
+
+    
+
     
 
 }

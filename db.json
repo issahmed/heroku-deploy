@@ -6,13 +6,6 @@
       "sessionField": "2",
       "sessiondate": "2001-11-30T23:00:00.000Z",
       "id": 1
-    },
-    {
-      "partnerName": "aa",
-      "email": "aa",
-      "representant": "aa",
-      "representantPhone": "aa",
-      "id": 2
     }
   ],
   "userslist": [
@@ -225,6 +218,45 @@
       "representant": "ahmed aissa",
       "repPhone": "99999999",
       "id": 7
+    }
+  ],
+  "tasksList": [
+    {
+      "task": "task 1",
+      "assigned_to": {},
+      "due_day": "lundi",
+      "priority": {
+        "id": 1,
+        "priority": "normal"
+      },
+      "details": "this task milkhr mehich task nekbes fik ",
+      "id": 3
+    },
+    {
+      "task": "azeaze",
+      "assigned_to": {
+        "role": "Finance"
+      },
+      "due_day": "lundi",
+      "priority": {
+        "id": 2,
+        "priority": "higher"
+      },
+      "details": "this task milkhr mehich task nekbes fik ",
+      "id": 9
+    },
+    {
+      "task": "task 2 ",
+      "assigned_to": {
+        "role": "RH"
+      },
+      "due_day": "lundi",
+      "priority": {
+        "id": 2,
+        "priority": "higher"
+      },
+      "details": "this task milkhr mehich task nekbes fik ",
+      "id": 10
     }
   ],
   "comments": [

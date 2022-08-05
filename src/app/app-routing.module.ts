@@ -4,16 +4,18 @@ import { EmailConfirmationComponent } from './auth/email-confirmation/email-conf
 import { ResetComponent } from './auth/reset/reset.component';
 import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
-import { AccountsKPIsComponent } from './dashboard/admin/accounts-kpis/accounts-kpis.component';
-import { AccountsManagerComponent } from './dashboard/admin/accounts-manager/accounts-manager.component';
+import { AccountsKPIsComponent } from './dashboard/admin/accounts manager/accounts-kpis/accounts-kpis.component';
+import { AccountsManagerComponent } from './dashboard/admin/accounts manager/accounts-manager/accounts-manager.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { HomeComponent } from './dashboard/admin/home/home.component';
-import { PartenariatKPIsComponent } from './dashboard/admin/partenariat-kpis/partenariat-kpis.component';
-import { PartenariatComponent } from './dashboard/admin/partenariat/partenariat.component';
-import { ProspectingListComponent } from './dashboard/admin/prospecting-list/prospecting-list.component';
+import { PartenariatKPIsComponent } from './dashboard/admin/partners manager/partenariat-kpis/partenariat-kpis.component';
+import { PartenariatComponent } from './dashboard/admin/partners manager/partenariat/partenariat.component';
+import { ProspectingListComponent } from './dashboard/admin/partners manager/prospecting-list/prospecting-list.component';
 import { TrainingComponent } from './dashboard/admin/training/training.component';
-import { UsersListComponent } from './dashboard/admin/users-list/users-list.component';
-import { MainLayoutComponent } from './shared-layout/main-layout/main-layout.component';
+import { UsersListComponent } from './dashboard/admin/accounts manager/users-list/users-list.component';
+import { TasksManagerComponent } from './dashboard/admin/secretary pole/tasks-manager/tasks-manager.component';
+import { AddComponent } from './dashboard/admin/secretary pole/tasks-manager/add/add.component';
+import { PopUpTaskComponent } from './dashboard/admin/secretary pole/tasks-manager/pop-up-task/pop-up-task.component';
 
 
 const routes: Routes = [
@@ -31,7 +33,12 @@ const routes: Routes = [
       {path : 'partenariat' , component : PartenariatComponent},
       {path : 'prospectinglist' , component : ProspectingListComponent},
       {path : 'partenariat-kpis' , component : PartenariatKPIsComponent},
-      {path : 'accounts-kpis' , component : AccountsKPIsComponent}
+      {path : 'accounts-kpis' , component : AccountsKPIsComponent},
+      {path : 'meetings' , component : TasksManagerComponent},
+      {path : 'add' , component :PopUpTaskComponent}
+
+
+
 
 
 

@@ -39,10 +39,6 @@
         </li>
         </ul>
       </div>
-
-    
-
-
     
     <div mat-list-item  clickOutside (clickOutside)="toggleMenuUsers()">     
       <a  (click)="toggleMenuUsers()" mat-list-item  routerLink="/dashboard/accounts-kpis"   >
@@ -88,9 +84,12 @@
           </a>          
       </li>
       </ul>
-      
-
     </div>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/meetings">
+      Secretary 
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </a>
     
 
 

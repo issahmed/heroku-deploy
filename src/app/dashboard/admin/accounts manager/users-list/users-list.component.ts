@@ -3,8 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 import { ApiService } from 'src/app/service/api.service';
 import { PopUpConfirmationService } from 'src/app/service/pop-up-confirmation.service';
-import { AdminService } from '../admin.service';
-import { User } from '../models/user';
+import { AdminService } from '../../admin.service';
+import { User } from '../../models/user';
 import { DialogComponent } from './dialog/dialog.component';
 
 @Component({

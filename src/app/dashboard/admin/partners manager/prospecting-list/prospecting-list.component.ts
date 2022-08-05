@@ -24,8 +24,8 @@ export class ProspectingListComponent implements OnInit {
   ngOnInit(): void {
   
     this.getProspecting()
-    console.log("hi")
-    console.log(this.dataSource)
+    // console.log("hi")
+    // console.log(this.dataSource)
   }
 
   openDialog() {

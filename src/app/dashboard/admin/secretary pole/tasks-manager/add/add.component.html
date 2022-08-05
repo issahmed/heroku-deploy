@@ -1,0 +1,54 @@
+<div class="m-4 page container" >
+
+    <form class="normal-form" (submit)="onSubmit()">
+        
+        <div >
+            <mat-form-field class="mat-form-field-task">
+                        <input matInput placeholder="task" >
+            </mat-form-field>
+            <mat-form-field style="width: 115px;" appearance="standard">
+                <mat-label>Due day</mat-label>
+                <mat-date-range-input
+                  [formGroup]="campaignTwo"
+                  [rangePicker]="campaignTwoPicker"
+                  [comparisonStart]="campaignOne.value.start"
+                  [comparisonEnd]="campaignOne.value.end">
+                  <input matStartDate placeholder="Start date" formControlName="start">
+                  <input matEndDate placeholder="End date" formControlName="end">
+                </mat-date-range-input>
+                <mat-datepicker-toggle matSuffix [for]="campaignTwoPicker"></mat-datepicker-toggle>
+                <mat-hint>start date – end date</mat-hint>
+                <mat-date-range-picker #campaignTwoPicker></mat-date-range-picker>
+            </mat-form-field>
+    
+            <mat-form-field class="iconfield"  >
+                <mat-label> 
+                    <mat-icon style="width: 50px;">add</mat-icon>
+                </mat-label>
+                        <mat-select class="circle" >
+                            <mat-option value="pr">PR</mat-option>
+                            <mat-option value="rh">RH</mat-option>
+                        </mat-select>
+            </mat-form-field>
+    
+            <mat-form-field class="iconfield">
+                <mat-select formControlName="department" class="circle">
+                    <ng-container class="circle">
+                        <mat-option value="opt 1 ">lower </mat-option>
+                        <mat-option value="opt 2 ">normal </mat-option>
+                        <mat-option value="opt 3 ">higher </mat-option>
+                    </ng-container>
+                    </mat-select>
+                </mat-form-field>
+
+
+                <button mat-icon-button color="primary" type="submit" >
+                    <mat-icon>add</mat-icon>
+                </button>
+                
+        </div>
+    </form>
+    
+    
+
+</div>

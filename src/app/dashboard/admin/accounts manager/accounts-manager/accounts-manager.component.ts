@@ -2,9 +2,9 @@ import { Component, EventEmitter, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ApiService } from 'src/app/service/api.service';
 import { PopUpConfirmationService } from 'src/app/service/pop-up-confirmation.service';
-import { AdminService } from '../admin.service';
-import { RequestModel } from '../models/request';
-import { User } from '../models/user';
+import { AdminService } from '../../admin.service';
+import { RequestModel } from '../../models/request';
+import { User } from '../../models/user';
 
 
 @Component({
