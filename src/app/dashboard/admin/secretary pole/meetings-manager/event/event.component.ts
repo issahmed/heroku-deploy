@@ -1,16 +1,22 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Inject, Input, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ApiService } from 'src/app/service/api.service';
 import { PopUpConfirmationService } from 'src/app/service/pop-up-confirmation.service';
 import { PopupComponent } from '../../../training/popup/popup.component';
+import { Appointment } from '../appointement.type';
 
 @Component({
-  selector: 'app-prospect-pop-up',
-  templateUrl: './prospect-pop-up.component.html',
-  styleUrls: ['./prospect-pop-up.component.sass']
+  selector: 'app-event',
+  templateUrl: './event.component.html',
+  styleUrls: ['./event.component.sass'],
+  changeDetection: ChangeDetectionStrategy.OnPush
+
 })
-export class ProspectPopUpComponent implements OnInit {
+export class EventComponent implements OnInit {
+  eventName: string = "";
+
+
 
   sessionForm!: FormGroup;
   actionBtn : string = "Add"
@@ -25,24 +31,17 @@ export class ProspectPopUpComponent implements OnInit {
   
 ngOnInit() {  
       this.sessionForm = this.formBuilder.group({
-        organisationName: ['', Validators.required],
+        partner: ['', Validators.required],
         email: ['', Validators.required],
-        adress: ['', Validators.required],
-        function: ['', Validators.required],
-        respnsableName: ['', Validators.required],
-        phoneNumber: ['', Validators.required],
-        status: ['', Validators.required]
+        representant: ['', Validators.required],
+        repPhone: ['', Validators.required]
       });
       if(this.editData[0]){
         this.actionBtn = "update"
-        this.sessionForm.controls["organisationName"].setValue(this.editData[0].organisationName);
+        this.sessionForm.controls["partner"].setValue(this.editData[0].partner);
         this.sessionForm.controls["email"].setValue(this.editData[0].email);
-        this.sessionForm.controls["adress"].setValue(this.editData[0].adress);
-        this.sessionForm.controls["function"].setValue(this.editData[0].function);
-        this.sessionForm.controls["respnsableName"].setValue(this.editData[0].respnsableName);
-        this.sessionForm.controls["phoneNumber"].setValue(this.editData[0].phoneNumber);
-        this.sessionForm.controls["status"].setValue(this.editData[0].status);
-
+        this.sessionForm.controls["representant"].setValue(this.editData[0].representant);
+        this.sessionForm.controls["repPhone"].setValue(this.editData[0].repPhone);
       }
     }
 
@@ -108,28 +107,8 @@ updatesession(){
     }
 }
 
-
-// deleteProspect(){ 
-
-//   this.confirmation.openConfirmDialog("are you sure to delete this prospect ?")
-//   .afterClosed().subscribe(
-//     res => {
-//       if(res){
-//           this.api.deleteProspect(this.editData[0].id)
-//           .subscribe({
-//               next:()=>{
-//                 },
-//                       error:()=>{
-//                         alert("error while deleting request")
-//                           }                
-//             })
-//             this.dialogRef.close([]);                 
-//             }
-//     })
-// }
+createEvent(){
 
 }
-
-
-
-
+cancelDialog(){}
+}

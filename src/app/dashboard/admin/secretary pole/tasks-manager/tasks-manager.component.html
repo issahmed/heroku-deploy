@@ -1,11 +1,10 @@
 <div class="container-fluid page">
-  <div class="d-flex page__box p-3 mt-0"> Task manager  </div>
+  <div class="page__box  p-3 text-center"> Task manager  </div>
       <div class="page__content shadow p-3 position-relative">
+        <button mat-stroked-button (click)="add()"style="" >
+          <b>+  add new task</b>
+          </button>
         <div class="container" >
-
-          <button mat-stroked-button (click)="add()"style="margin: 10px;" >
-            <b>+  add new task</b>
-            </button>
             <mat-form-field appearance="standard">
               <mat-label>Filter</mat-label>
               <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>

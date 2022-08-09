@@ -11,24 +11,10 @@ const year = today.getFullYear();
   
 })
 export class AddComponent implements OnInit {
-  campaignOne = new FormGroup({
-    start: new FormControl(new Date(year, month, 13)),
-    end: new FormControl(new Date(year, month, 16)),
-  });
-  campaignTwo = new FormGroup({
-    start: new FormControl(new Date(year, month, 15)),
-    end: new FormControl(new Date(year, month, 19)),
-  });
-  ngOnInit() {
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
 
-
-  onSubmit() {
-  }
-  onClose(){
-
-  }
-  onClear(){}
 
 }
 

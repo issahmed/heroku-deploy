@@ -16,6 +16,7 @@ import { UsersListComponent } from './dashboard/admin/accounts manager/users-lis
 import { TasksManagerComponent } from './dashboard/admin/secretary pole/tasks-manager/tasks-manager.component';
 import { AddComponent } from './dashboard/admin/secretary pole/tasks-manager/add/add.component';
 import { PopUpTaskComponent } from './dashboard/admin/secretary pole/tasks-manager/pop-up-task/pop-up-task.component';
+import { MeetingsManagerComponent } from './dashboard/admin/secretary pole/meetings-manager/meetings-manager.component';
 
 
 const routes: Routes = [
@@ -34,8 +35,11 @@ const routes: Routes = [
       {path : 'prospectinglist' , component : ProspectingListComponent},
       {path : 'partenariat-kpis' , component : PartenariatKPIsComponent},
       {path : 'accounts-kpis' , component : AccountsKPIsComponent},
-      {path : 'meetings' , component : TasksManagerComponent},
-      {path : 'add' , component :PopUpTaskComponent}
+      {path : 'tasks' , component : TasksManagerComponent},
+      {path : 'add' , component :AddComponent},
+      {path : 'meetings' , component :MeetingsManagerComponent}
+
+
 
 
 

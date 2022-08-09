@@ -4,7 +4,7 @@
     
     <mat-form-field  class="example-full-width" appearance="outline">
         <mat-label>Partner name</mat-label>
-        <input formControlName="partner" [formGroup]="sessionForm" matInput placeholder="Placeholder">
+        <input formControlName="organisationName" [formGroup]="sessionForm" matInput placeholder="Placeholder">
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
@@ -13,13 +13,28 @@
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>adress </mat-label>
+      <input formControlName="adress" [formGroup]="sessionForm" matInput placeholder="Placeholder">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>function </mat-label>
+      <input formControlName="function" [formGroup]="sessionForm" matInput placeholder="Placeholder">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>representant</mat-label>
-        <input formControlName="representant" [formGroup]="sessionForm" matInput placeholder="Placeholder">
+        <input formControlName="respnsableName" [formGroup]="sessionForm" matInput placeholder="Placeholder">
       </mat-form-field>
 
       <mat-form-field class="example-full-width" appearance="outline">
         <mat-label>phone</mat-label>
-        <input formControlName="repPhone" [formGroup]="sessionForm" matInput placeholder="Placeholder">
+        <input formControlName="phoneNumber" [formGroup]="sessionForm" matInput placeholder="Placeholder">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>status </mat-label>
+        <input formControlName="status" [formGroup]="sessionForm" matInput placeholder="Placeholder">
       </mat-form-field>
     
     <!-- <mat-form-field appearance="fill">

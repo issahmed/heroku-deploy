@@ -43,34 +43,10 @@ export class SigninComponent implements OnInit {
        return;
      } 
      else {
-      console.log(this.authForm.value) ;
+      this.router.navigate(['/dashboard']);
+      
+     // console.log(this.authForm.value) ;
      }
-     //else {
-       //this.authService
-       //  .login(this.f["email"].value, this.f["password"].value)}
-    //     .subscribe(
-    //       (res) => {
-    //         if (res) {
-    //           const role = this.authService.currentUserValue.role;
-    //           if (role === Role.All || role === Role.Admin) {
-    //             this.router.navigate(['/admin/dashboard/main']);
-    //           } else if (role === Role.Teacher) {
-    //             this.router.navigate(['/teacher/dashboard']);
-    //           } else if (role === Role.Student) {
-    //             this.router.navigate(['/student/dashboard']);
-    //           } else {
-    //             this.router.navigate(['/authentication/signin']);
-    //           }
-    //         } else {
-    //           this.error = 'Invalid Login';
-    //         }
-    //       },
-    //       (error) => {
-    //         this.error = error;
-    //         this.submitted = false;
-    //       }
-    //     );
-    // }
-  
+     
     }
 }

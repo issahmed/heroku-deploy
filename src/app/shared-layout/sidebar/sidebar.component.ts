@@ -18,6 +18,7 @@ export class SidebarComponent implements OnInit {
   isMenuUsers: boolean = false;
   isMenuTraining: boolean = false;
   isMenuPartners: boolean = false;
+  isMenuSecretary: boolean=false ;
 
 
 
@@ -40,6 +41,13 @@ export class SidebarComponent implements OnInit {
   }
   clickedOutsidePartners(): void {
     this.isMenuPartners = false;
+  }
+
+  toggleMenuSecretary(): void {
+    this.isMenuSecretary = !this.isMenuSecretary;
+  }
+  clickedOutsideSecretary(): void {
+    this.isMenuSecretary = false;
   }
 
     

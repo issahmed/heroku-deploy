@@ -11,6 +11,11 @@ export class HeaderComponent implements OnInit {
 
   constructor(private router: Router) {}
 
+  logout(){
+    console.log(this.router)
+    this.router.navigate(['']);
+  }
+
   ngOnInit(): void {}
 
   toggleSidebar() {

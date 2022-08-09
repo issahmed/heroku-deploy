@@ -13,7 +13,7 @@ import { ProspectPopUpComponent } from './prospect-pop-up/prospect-pop-up.compon
 })
 export class ProspectingListComponent implements OnInit {
   
-  displayedColumns: string[] = ['partner', 'email', 'representant', 'representant phone','Decision'];
+  displayedColumns: string[] = ['organisationName', 'email', 'adress', 'function','respnsableName','phoneNumber','status'];
   dataSource : any ;
   constructor(
     private dialog: MatDialog ,
@@ -21,11 +21,8 @@ export class ProspectingListComponent implements OnInit {
     private confirmation : PopUpConfirmationService
   ) { }
 
-  ngOnInit(): void {
-  
+  ngOnInit(): void {  
     this.getProspecting()
-    // console.log("hi")
-    // console.log(this.dataSource)
   }
 
   openDialog() {
@@ -45,7 +42,7 @@ export class ProspectingListComponent implements OnInit {
     })
     .afterClosed().subscribe(val=>{
         this.getProspecting();
-     })
+    })
     console.log(element)
   }
 
@@ -74,26 +71,26 @@ export class ProspectingListComponent implements OnInit {
     this.api.deleteProspect(element.id)
             .subscribe({
               next:()=>{
-                 this.getProspecting()
+                this.getProspecting()
               },
               error:()=>{
                 alert("error while deleting request")
               }
     })     
-  }
+}
 
   getProspecting() {
     this.api.getProspectingList()
       .subscribe({
         next: (list) => {
           this.dataSource= new MatTableDataSource(list)  
+          console.log(this.dataSource)
         },
         error: (err) => {
           alert("error while fetching")
         }
       })
-  }
-
+}
 
   deleteProspect(element :any){
     this.confirmation.openConfirmDialog("are you sure to delete this prospect  ?")
@@ -113,7 +110,4 @@ export class ProspectingListComponent implements OnInit {
       }
       )
   }
-
-
-
 }

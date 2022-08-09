@@ -71,7 +71,7 @@ export class PopUpTaskComponent implements OnInit {
   if(this.task[0]){
     this.actionBtn = "update"
     this.prioritySelected=this.task[0].priority.id
-    console.log(this.roleSelected=this.task[0].assigned_to.id)
+    //console.log(this.roleSelected=this.task[0].assigned_to.id)
     this.roleSelected=this.task[0].assigned_to.id 
     this.editTask.controls["task"].setValue(this.task[0].task);
     this.editTask.controls["description"].setValue(this.task[0].details);

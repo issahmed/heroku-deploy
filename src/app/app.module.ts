@@ -52,9 +52,15 @@ import { MeetingsManagerComponent } from './dashboard/admin/secretary pole/meeti
 import { TasksManagerComponent } from './dashboard/admin/secretary pole/tasks-manager/tasks-manager.component';
 import { AddComponent } from './dashboard/admin/secretary pole/tasks-manager/add/add.component';
 import { PopUpTaskComponent } from './dashboard/admin/secretary pole/tasks-manager/pop-up-task/pop-up-task.component';
+import { FullCalendarModule } from '@fullcalendar/angular'; // must go before plugins
+import dayGridPlugin from '@fullcalendar/daygrid';
+import { EventComponent } from './dashboard/admin/secretary pole/meetings-manager/event/event.component';
+import { CalendarComponent } from './dashboard/admin/secretary pole/meetings-manager/calendar/calendar.component'; // a plugin!
 
 
-
+FullCalendarModule.registerPlugins([ // register FullCalendar plugins
+  dayGridPlugin,
+]);
 
 @NgModule({
   declarations: [
@@ -86,6 +92,8 @@ import { PopUpTaskComponent } from './dashboard/admin/secretary pole/tasks-manag
     TasksManagerComponent,
     AddComponent,
     PopUpTaskComponent,
+    EventComponent,
+    CalendarComponent,
     
   ],
   imports: [
@@ -115,16 +123,7 @@ import { PopUpTaskComponent } from './dashboard/admin/secretary pole/tasks-manag
     MatPaginatorModule,
     MatSortModule,
     HighchartsChartModule,
-    
-    
-    
-    
-    
-    
-    
-    
-    
- 
+    FullCalendarModule
   ],
   providers: [  
      // AuthService,

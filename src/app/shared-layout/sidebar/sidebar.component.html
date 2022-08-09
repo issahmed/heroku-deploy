@@ -4,22 +4,46 @@
     </div>
     <mat-divider></mat-divider>
     <h1 matSubheader class="mt-2">Admin dashboard</h1>
+    <hr>
   
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/home">
+    <!-- <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/home">
       Home 
       <mat-icon>home</mat-icon>
-    </a>
+    </a> -->
     <!-- <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/partenariat">
       Partenariat 
       <mat-icon>edit</mat-icon>
     </a> -->
 
 
+    <div mat-list-item  clickOutside (clickOutside)="toggleMenuUsers()">     
+      
+      <a  (click)="toggleMenuUsers()" mat-list-item  routerLink="/dashboard/accounts-kpis"   >
+        Users
+        <mat-icon>keyboard_arrow_down</mat-icon>
+      </a>
+      <div *ngIf="isMenuUsers">
+        <ul>
+          <li>
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/users-list">
+              Users list 
+              <mat-icon>account_circle</mat-icon>
+            </a>            
+        </li>
+        <li>
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/accounts-manager" > 
+              Waiting list 
+              <mat-icon>hourglass_full</mat-icon>
+            </a>      
+        </li>
+        </ul>
+      </div>
+  </div>
 
       <a 
        (click)="toggleMenuPartners()"
        mat-list-item 
-       routerLinkActive="list-item-active" routerLink="/dashboard/partenariat-kpis">
+       >
         Partenariat 
         <mat-icon>keyboard_arrow_down</mat-icon>
       </a>
@@ -28,71 +52,64 @@
         <li>
             <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/partenariat" > 
               Partner list 
-              <mat-icon >edit</mat-icon> 
+              <mat-icon>group</mat-icon>
             </a>      
         </li>
         <li>
             <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/prospectinglist">
               Prospecting list  
-              <mat-icon>edit</mat-icon>          
+              <mat-icon>person_add</mat-icon>
             </a>             
         </li>
+        <li>
+          <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/partenariat-kpis" > 
+            Partners KPIs
+            <mat-icon>donut_small</mat-icon>
+          </a>      
+      </li>
         </ul>
       </div>
     
-    <div mat-list-item  clickOutside (clickOutside)="toggleMenuUsers()">     
-      <a  (click)="toggleMenuUsers()" mat-list-item  routerLink="/dashboard/accounts-kpis"   >
-        Users
-        <mat-icon>keyboard_arrow_down</mat-icon>
-      </a>
-      <div *ngIf="isMenuUsers">
-        <ul>
-        <li>
-            <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/accounts-manager" > 
-              Waiting list 
-              <mat-icon >edit</mat-icon> 
-            </a>      
-        </li>
-        <li>
-            <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/users-list">
-              Users list 
-              <mat-icon>edit</mat-icon>          
-            </a>            
-        </li>
-        </ul>
-      </div>
-      
+    
 
-  </div>
   <div mat-list-item  clickOutside (clickOutside)="clickedOutsideTraining()">     
     <a  (click)="toggleMenuTraining()" mat-list-item >
-      training
+      Training
       <mat-icon>keyboard_arrow_down</mat-icon>
     </a>
     <div *ngIf="isMenuTraining">
       <ul>
-      <li>
-          <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/training" > 
-            Sessions
-            <mat-icon >edit</mat-icon> 
-          </a>      
-      </li>
-      <li>
-          <a mat-list-item routerLinkActive="list-item-active" routerLink="##">
-            Trainers
-            <mat-icon>edit</mat-icon>          
-          </a>          
-      </li>
+        <li>
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/training" > 
+              Sessions
+              <mat-icon >edit</mat-icon> 
+            </a>      
+        </li>
       </ul>
     </div>
 
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/meetings">
-      Secretary 
-      <mat-icon>keyboard_arrow_down</mat-icon>
-    </a>
-    
-
-
+    <div mat-list-item  clickOutside (clickOutside)="toggleMenuUsers()">     
+      <a  (click)="toggleMenuSecretary()" mat-list-item routerLinkActive="list-item-active" >
+        Secretary 
+        <mat-icon>keyboard_arrow_down</mat-icon>
+      </a>
+      <div *ngIf="isMenuSecretary">
+        <ul>
+        <li>
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/tasks" > 
+              Tasks 
+              <mat-icon >task</mat-icon> 
+            </a>      
+        </li>
+        <li>
+          <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard/meetings" > 
+            meetings
+            <mat-icon>view_week</mat-icon>
+          </a>      
+      </li>
+        </ul>
+      </div>
+  </div>
 
 
 </div>

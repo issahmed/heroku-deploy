@@ -70,9 +70,9 @@ export class TasksManagerComponent implements OnInit {
       this.api.getTasks()
         .subscribe({
           next: (task) => {
-            //this.data= task  
+            //this.data= task 
             this.data= new MatTableDataSource(task)
-
+            console.log(this.data) 
           },
           error: (err) => {
             alert("error while fetching")
